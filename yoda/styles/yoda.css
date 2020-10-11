@@ -1,0 +1,19 @@
+#yoda-pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 500px;
+}
+
+#yoda-text {
+    text-align: center;
+}
+
+#text-form {
+    text-align: center;
+}
+
+#text-input {
+    width: 25%;
+}
