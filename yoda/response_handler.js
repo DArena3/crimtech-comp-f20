@@ -19,7 +19,35 @@ let std_quotes = ["Patience you must have, my young padawan.",
 "Difficult to see. Always in motion is the future."
 ];
 
+document.getElementById("text-input").addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        respond()
+    }
+});
+
 function respond() {
-    document.getElementById("yoda-pic").setAttribute("src", "img/regular-dark.jpg")
-    document.getElementById("yoda-text").innerText = "testing"
+    var text = document.getElementById("text-input").value
+
+    var name = (text.includes(names[0]) || text.includes("baby")) ? 0:1
+
+    if (text.includes(moods[0]) && text.includes(moods[1])) mood = 0
+    else if (text.includes(moods[1])) mood = 1
+    else mood = 2
+
+    document.getElementById("yoda-pic").setAttribute("src", `img/${names[name]}-${moods[mood]}.jpg`)
+
+    if (name == 1) {
+        switch (mood) {
+            case 0: document.getElementById("yoda-text").innerText = dark_quotes[Math.floor(Math.random() * dark_quotes.length)]
+                break
+            case 1: document.getElementById("yoda-text").innerText = force_quotes[Math.floor(Math.random() * force_quotes.length)]
+                break
+            default: document.getElementById("yoda-text").innerText = std_quotes[Math.floor(Math.random() * std_quotes.length)]
+        }
+
+        document.getElementById("yoda-text").innerText = document.getElementById("yoda-text").innerText + " Yes, h" + "m".repeat(Math.floor(Math.random() * 7) + 2) + "."
+    }
+    else document.getElementById("yoda-text").innerText = "Yes, h" + "m".repeat(Math.floor(Math.random() * 7) + 2) + "."
+
+    document.getElementById("text-input").value = ""
 }
