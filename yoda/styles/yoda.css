@@ -1,3 +1,8 @@
+#page-title {
+    text-align: center;
+    background-color: green;
+}
+
 #yoda-pic {
     display: block;
     margin-left: auto;
