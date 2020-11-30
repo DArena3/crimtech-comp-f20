@@ -30,6 +30,13 @@
 
 .PanelContainer {
   /* TODO: Your CSS Here! */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 40%;
+  padding: 20px;
 }
 
 .Panel {
